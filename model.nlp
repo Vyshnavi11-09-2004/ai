@@ -1,0 +1,349 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "a,am,engin,i,softwar": {
+            "intent": "role.software_engineer",
+            "domain": "default"
+          },
+          "and,experi,have,i,in,javascript,python": {
+            "intent": "skills.python_javascript",
+            "domain": "default"
+          },
+          "5,at,for,googl,i,work,year": {
+            "intent": "experience.google",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "role.software_engineer": "default",
+          "skills.python_javascript": "default",
+          "experience.google": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "I am a software engineer",
+            "intent": "role.software_engineer"
+          },
+          {
+            "domain": "default",
+            "utterance": "I have experience in Python and JavaScript",
+            "intent": "skills.python_javascript"
+          },
+          {
+            "domain": "default",
+            "utterance": "I worked at Google for 5 years",
+            "intent": "experience.google"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "5": 1,
+              "i": 1,
+              "am": 1,
+              "a": 1,
+              "softwar": 1,
+              "engin": 1,
+              "have": 1,
+              "experi": 1,
+              "in": 1,
+              "python": 1,
+              "and": 1,
+              "javascript": 1,
+              "work": 1,
+              "at": 1,
+              "googl": 1,
+              "for": 1,
+              "year": 1
+            },
+            "intents": {
+              "role.software_engineer": 1,
+              "skills.python_javascript": 1,
+              "experience.google": 1
+            },
+            "intentFeatures": {
+              "role.software_engineer": {
+                "i": 1,
+                "am": 1,
+                "a": 1,
+                "softwar": 1,
+                "engin": 1
+              },
+              "skills.python_javascript": {
+                "i": 1,
+                "have": 1,
+                "experi": 1,
+                "in": 1,
+                "python": 1,
+                "and": 1,
+                "javascript": 1
+              },
+              "experience.google": {
+                "5": 1,
+                "i": 1,
+                "work": 1,
+                "at": 1,
+                "googl": 1,
+                "for": 1,
+                "year": 1
+              }
+            },
+            "featuresToIntent": {
+              "5": [
+                "experience.google"
+              ],
+              "i": [
+                "role.software_engineer",
+                "skills.python_javascript",
+                "experience.google"
+              ],
+              "am": [
+                "role.software_engineer"
+              ],
+              "a": [
+                "role.software_engineer"
+              ],
+              "softwar": [
+                "role.software_engineer"
+              ],
+              "engin": [
+                "role.software_engineer"
+              ],
+              "have": [
+                "skills.python_javascript"
+              ],
+              "experi": [
+                "skills.python_javascript"
+              ],
+              "in": [
+                "skills.python_javascript"
+              ],
+              "python": [
+                "skills.python_javascript"
+              ],
+              "and": [
+                "skills.python_javascript"
+              ],
+              "javascript": [
+                "skills.python_javascript"
+              ],
+              "work": [
+                "experience.google"
+              ],
+              "at": [
+                "experience.google"
+              ],
+              "googl": [
+                "experience.google"
+              ],
+              "for": [
+                "experience.google"
+              ],
+              "year": [
+                "experience.google"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "i",
+                "am",
+                "a",
+                "softwar",
+                "engin",
+                "have",
+                "experi",
+                "in",
+                "python",
+                "and",
+                "javascript",
+                "5",
+                "work",
+                "at",
+                "googl",
+                "for",
+                "year"
+              ],
+              "intents": [
+                "role.software_engineer",
+                "skills.python_javascript",
+                "experience.google"
+              ],
+              "perceptrons": [
+                [
+                  1.7780965566635132,
+                  2.9134583473205566,
+                  2.9134583473205566,
+                  2.9134583473205566,
+                  2.9134583473205566,
+                  -0.49368733167648315,
+                  -0.49368733167648315,
+                  -0.49368733167648315,
+                  -0.49368733167648315,
+                  -0.49368733167648315,
+                  -0.49368733167648315,
+                  -0.49468350410461426,
+                  -0.49468350410461426,
+                  -0.49468350410461426,
+                  -0.49468350410461426,
+                  -0.49468350410461426,
+                  -0.49468350410461426,
+                  0.879163530986649
+                ],
+                [
+                  1.0686739683151245,
+                  -0.49545618891716003,
+                  -0.49545618891716003,
+                  -0.49545618891716003,
+                  -0.49545618891716003,
+                  2.091618299484253,
+                  2.091618299484253,
+                  2.091618299484253,
+                  2.091618299484253,
+                  2.091618299484253,
+                  2.091618299484253,
+                  -0.3681594431400299,
+                  -0.3681594431400299,
+                  -0.3681594431400299,
+                  -0.3681594431400299,
+                  -0.3681594431400299,
+                  -0.3681594431400299,
+                  0.5360006502265667
+                ],
+                [
+                  1.073372721672058,
+                  -0.4935397505760193,
+                  -0.4935397505760193,
+                  -0.4935397505760193,
+                  -0.4935397505760193,
+                  -0.36791637539863586,
+                  -0.36791637539863586,
+                  -0.36791637539863586,
+                  -0.36791637539863586,
+                  -0.36791637539863586,
+                  -0.36791637539863586,
+                  2.090343952178955,
+                  2.090343952178955,
+                  2.090343952178955,
+                  2.090343952178955,
+                  2.090343952178955,
+                  2.090343952178955,
+                  0.5383728468777143
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "I am a software engineer"
+      ],
+      [
+        "en",
+        "I have experience in Python and JavaScript"
+      ],
+      [
+        "en",
+        "I worked at Google for 5 years"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "role.software_engineer": [
+          {
+            "answer": "Identified role: Software Engineer."
+          }
+        ],
+        "skills.python_javascript": [
+          {
+            "answer": "Skills: Python, JavaScript."
+          }
+        ],
+        "experience.google": [
+          {
+            "answer": "Experience: Worked at Google for 5 years."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
